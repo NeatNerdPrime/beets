@@ -12,6 +12,42 @@ Unreleased
 New features
 ~~~~~~~~~~~~
 
+- **Beets library is now made portable**: item and album-art paths are now
+  stored relative to the library root in the database while remaining absolute
+  in the rest of beets. Path queries continue matching both library-relative
+  paths and absolute paths under the currently configured music directory under
+  the new storage model. The existing paths in the database are migrated
+  automatically the first time you run any ``beet`` command after the update.
+  :bug:`133`
+
+  .. warning::
+
+      make sure you run ``beet version`` (or any other command) at least once
+      after upgrading to trigger the migration. Only then you can safely move
+      the library to a new location.
+
+Bug fixes
+~~~~~~~~~
+
+- :doc:`plugins/listenbrainz`: Retry listenbrainz requests for temporary
+  failures.
+
+..
+    For plugin developers
+    ~~~~~~~~~~~~~~~~~~~~~
+
+..
+    Other changes
+    ~~~~~~~~~~~~~
+
+2.9.0 (April 11, 2026)
+----------------------
+
+Beets now officially supports Python 3.14.
+
+New features
+~~~~~~~~~~~~
+
 - :ref:`import-cmd` Use ffprobe to recognize format of any import music file
   that has no extension. If the file cannot be recognized as a music file, leave
   it alone. :bug:`4881`
@@ -92,10 +128,6 @@ For plugin developers
   ``composer``, ``lyricist``, ``remixer`` fields, update it to populate the
   respective multi-valued fields instead (``arrangers``, ``composers``,
   ``lyricists``, ``remixers``).
-
-..
-    Other changes
-    ~~~~~~~~~~~~~
 
 2.8.0 (March 28, 2026)
 ----------------------
