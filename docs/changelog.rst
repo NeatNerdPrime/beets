@@ -22,6 +22,9 @@ Bug fixes
 
 - :doc:`plugins/mbpseudo`: Fix crashes when applying a pseudo-release. One in
   ``PseudoAlbumInfo.raw_data`` and a ``sqlite3.ProgrammingError``.
+- Path format queries now correctly match multi-value fields such as
+  ``genres`` when using exact string matches like ``genres:=Classical`` or
+  ``genres:=~Classical``.
 
 ..
     For plugin developers
