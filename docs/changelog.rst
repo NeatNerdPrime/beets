@@ -28,6 +28,9 @@ Bug fixes
   when ``import.from_scratch`` is enabled. :bug:`6613`
 - :doc:`plugins/tidal`: add ``tidal`` dependency extra to make sure
   ``requests-oauthlib`` is installed. :bug:`6633`
+- Path format queries now correctly match multi-value fields such as ``genres``
+  when using exact string matches like ``genres:=Classical`` or
+  ``genres:=~Classical``. :bug:`6598`
 
 ..
     For plugin developers
