@@ -30,7 +30,7 @@ Bug fixes
   ``requests-oauthlib`` is installed. :bug:`6633`
 - Path format queries now correctly match multi-value fields such as ``genres``
   when using exact string matches like ``genres:=Classical`` or
-  ``genres:=~Classical``.
+  ``genres:=~Classical``. :bug:`6598`
 
 ..
     For plugin developers
