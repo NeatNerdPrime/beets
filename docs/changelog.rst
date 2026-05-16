@@ -22,6 +22,12 @@ Bug fixes
 
 - :doc:`plugins/mbpseudo`: Fix crashes when applying a pseudo-release. One in
   ``PseudoAlbumInfo.raw_data`` and a ``sqlite3.ProgrammingError``.
+- :doc:`plugins/duplicates`: Fix plugin output: information about duplicate
+  items was not displayed by default. --count option was ignored :bug:`6476`
+- :doc:`plugins/mbsync` / :doc:`plugins/bpsync`: Do not clear items metadata
+  when ``import.from_scratch`` is enabled. :bug:`6613`
+- :doc:`plugins/tidal`: add ``tidal`` dependency extra to make sure
+  ``requests-oauthlib`` is installed. :bug:`6633`
 - Path format queries now correctly match multi-value fields such as
   ``genres`` when using exact string matches like ``genres:=Classical`` or
   ``genres:=~Classical``.
